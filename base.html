@@ -1,0 +1,56 @@
+<!doctype html>
+<!--*****************************************************************
+*  共通のhtml
+*  
+*****************************************************************-->
+
+<head>
+    <meta charset="utf-8">
+    <title>プロト</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tabulator/3.5.3/js/tabulator.min.js"></script>
+
+    <script src="{{url_for('static', filename='xlsx.full.min.js')}}"></script>    <!-- cdn設定だとsheetJSが動かない-->
+    <script src="{{url_for('static', filename='gsl_common.js')}}"></script>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://oss.sheetjs.com/assets/vendor/samples.css">
+    <link rel="stylesheet" href="https://oss.sheetjs.com/assets/css/sheetjs.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabulator/3.5.3/css/tabulator.min.css">
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+    <!-- link rel="stylesheet" type=text/css href="{{ url_for('static', filename='style.css') }}" -->
+
+    <style>
+        html {overflow-y:scroll ;}
+
+        body {zoom:80% ;}
+
+        *,h1,h2,h3    {font-family:Times New Roman,Meiryo;font-style:italic}
+
+    </style>
+
+</head>
+
+<body>
+<div class="container">
+    <header>
+        <!--ナビゲーションメニュー（Navbar）  -->
+        <div class="navbar navbar-dark" style="height:40px; background-color:black; ">
+            <div class="navbar-brand d-flex align-items-center">
+                <strong>Flask(Powerd By Python+Flask+SQLite+Bootstrap4+scikit-learn)</strong>
+            </div>
+        </div>
+    </header>
+</div>
+
+<div class="container">
+    {% block body %}
+    {% endblock %}
+</div>
+
+</body>
+</html>
